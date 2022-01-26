@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "hRq5LE32FM5X20XYCn9zH+W2k6hUaPkSWKpnIm6CVZsfcU30JAo76QWHUCTUWUaRxWUvJSo8Dmlgrubv+hq6vg==",
+  "dgSpecHash": "Urit6ZgktilZxeA/6R/2gi4bjhTBDMIMNkSHgwIDcMaCCKkMopc21RtPVLUK3JLCfXaXwc3YUM+MgmgFD9YJIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\gcarey\\source\\repos\\greggrcarey\\tech-assessment\\CSharp\\CSharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gcarey\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\gcarey\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\gcarey\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\gcarey\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\gcarey\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\gcarey\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "C:\\Users\\gcarey\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\gcarey\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512"
+  ],
   "logs": []
 }
