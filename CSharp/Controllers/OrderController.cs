@@ -17,12 +17,22 @@ namespace CSharp.Controllers
     [Route("[controller]")]
     public class OrderController : ControllerBase
     {
-        public OrderController() { }
+        private OrderService _orderService;
+        private CustomerService _customerService;
+
+        public OrderController()
+        {
+            _orderService = new OrderService();
+            _customerService = new CustomerService();
+        }
 
         [HttpGet("GetByCustomer/{id}")]
         public ActionResult<List<Order>> GetByCustomer(int id)
         {
-            var orders = OrderService.GetOrderByCustomerId(id);
+            var customer = _customerService.Get(id);
+            if (customer is null) return NotFound();
+
+            var orders = _orderService.GetList(customer.Id);
 
             if (orders is null) return NotFound();
             else
@@ -35,13 +45,13 @@ namespace CSharp.Controllers
         [HttpPut("Cancel/{id}")]
         public IActionResult Cancel(int id)
         {
-            var existingOrder = OrderService.Get(id);
+            var existingOrder = _orderService.Get(id);
 
 
             if (existingOrder is null) return BadRequest();
             if (existingOrder.Id != id) return BadRequest();
 
-            OrderService.Cancel(existingOrder);
+            _orderService.Cancel(existingOrder);
 
             return NoContent();
         }
@@ -51,18 +61,18 @@ namespace CSharp.Controllers
         {
             if (order.Id != id) return BadRequest();
 
-            var existingOrder = OrderService.Get(id);
+            var existingOrder = _orderService.Get(id);
 
             if (existingOrder is null) return BadRequest();
 
-            OrderService.Update(order);
+            _orderService.Update(order);
 
             return NoContent();
         }
         [HttpPost]
         public IActionResult Create(Order order)
         {
-            OrderService.Create(order);
+            _orderService.Create(order);
             return CreatedAtAction(nameof(Create), new { id = order.Id }, order);
         }
 

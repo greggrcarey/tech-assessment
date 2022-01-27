@@ -4,22 +4,18 @@ using CSharp.Models;
 
 namespace CSharp.Services
 {
-    public static class CustomerService
+    public class CustomerService
     {
 
-        static List<Customer> Customers { get; }
+        private List<Customer> _customers;
 
-        static CustomerService()
+        public CustomerService()
         {
-            Customers = new List<Customer>
-            {
-                new Customer{Id = 1, Name = "Ace Hardware"},
-                new Customer{Id = 2, Name = "Home Depot"}
-            };
+            _customers = new List<Customer>();
 
         }
 
-        public static Customer? Get(int id) => Customers.FirstOrDefault(c => c.Id == id);
+        public Customer? Get(int id) => _customers.FirstOrDefault(c => c.Id == id);
 
     }
 
