@@ -2,6 +2,7 @@ using CSharp.Models;
 using CSharp.Services;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using CSharp.Interfaces;
 
 /* 
 Create order endpoint
@@ -17,12 +18,12 @@ namespace CSharp.Controllers
     [Route("[controller]")]
     public class OrderController : ControllerBase
     {
-        private OrderService _orderService;
-        private CustomerService _customerService;
+        private readonly IOrderService _orderService;
+        private readonly CustomerService _customerService;
 
-        public OrderController()
+        public OrderController(IOrderService orderService)
         {
-            _orderService = new OrderService();
+            _orderService = orderService;
             _customerService = new CustomerService();
         }
 
