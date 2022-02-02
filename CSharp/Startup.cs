@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using CSharp.Interfaces;
+using CSharp.Services;
 
 namespace CSharp
 {
@@ -29,7 +31,7 @@ namespace CSharp
         {
             services.AddControllers();
 
-
+            services.AddTransient<IOrderService, OrderService>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen();

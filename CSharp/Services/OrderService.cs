@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using CSharp.Models;
+using CSharp.Interfaces;
 
 namespace CSharp.Services
 {
 
-    public class OrderService
+    public class OrderService : IOrderService
     {
-        private List<Order> _orders;
+        private readonly List<Order> _orders;
 
         static int nextId = 4;
         public OrderService()
